@@ -1,0 +1,9 @@
+pydantic
+ollama
+torch
+torchvision
+diffusers
+transformers
+accelerate
+safetensors
+sentencepiece
