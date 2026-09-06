@@ -1,0 +1,32 @@
+[
+    {
+        "id": "scene_01",
+        "duration": 2.7,
+        "action": "Spider-Man stands on a street corner, ready to begin his nightly patrol.",
+        "visual": "Cinematic wide shot, Spider-Man standing on a busy city street, photorealistic, night, "
+    },
+    {
+        "id": "scene_02",
+        "duration": 3.4,
+        "action": "Spider-Man prepares to swing across the city.",
+        "visual": "Cinematic medium close-up, Spider-Man preparing to swing across the city, photorealistic, night, "
+    },
+    {
+        "id": "scene_03",
+        "duration": 2.7,
+        "action": "Spider-Man lands on a rooftop, ready to take on a new challenge.",
+        "visual": "Cinematic medium close-up, Spider-Man landing on a rooftop, photorealistic, night, "
+    },
+    {
+        "id": "scene_04",
+        "duration": 3.4,
+        "action": "Spider-Man swings across the city, his web-shooters ready for any obstacle.",
+        "visual": "Cinematic wide shot, Spider-Man swinging across the city, photorealistic, night, "
+    },
+    {
+        "id": "scene_05",
+        "duration": 2.8,
+        "action": "Spider-Man lands on a rooftop, ready to take on a new challenge.",
+        "visual": "Cinematic medium close-up, Spider-Man landing on a rooftop, photorealistic, night, "
+    }
+]

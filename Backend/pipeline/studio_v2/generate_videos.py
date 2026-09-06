@@ -1,4 +1,5 @@
 import os
+import sys
 import json
 import subprocess
 import traceback
@@ -18,9 +19,9 @@ os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 
 MODEL_ID = "damo-vilab/text-to-video-ms-1.7b"
 
-VIDEO_FRAMES = 24
+VIDEO_FRAMES = 12
 VIDEO_FPS = 8
-INFERENCE_STEPS = 50
+INFERENCE_STEPS = 55
 
 SEED = 42
 
@@ -140,11 +141,6 @@ def main():
             print(f"[DAMO-VILAB] Generating {VIDEO_FRAMES} frames...")
             generator = torch.Generator(device="cpu").manual_seed(SEED + index)
 
-            def progress_callback(step, timestep, latents):
-                print(f"[DAMO-VILAB] Step {step}/{INFERENCE_STEPS} completed", flush=True)
-
-            pipe.set_progress_bar_config(disable=True)
-
             with torch.inference_mode():
                 result = pipe(
                     prompt=prompt,
@@ -152,8 +148,6 @@ def main():
                     num_frames=VIDEO_FRAMES,
                     num_inference_steps=INFERENCE_STEPS,
                     generator=generator,
-                    callback=progress_callback,
-                    callback_steps=1,
                 )
 
             frames = result.frames[0]

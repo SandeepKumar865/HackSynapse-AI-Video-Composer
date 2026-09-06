@@ -1,0 +1,272 @@
+{
+  "project": {
+    "title": "Suburban Encounter",
+    "target_duration": 15.0,
+    "style": "cinematic, photorealistic, 4k",
+    "aspect_ratio": "16:9",
+    "audio": {
+      "mood": "suspenseful",
+      "track": "main_theme_01"
+    }
+  },
+  "characters": [
+    {
+      "id": "char_1",
+      "name": "Alex",
+      "visual": {
+        "age": 25,
+        "gender": "male",
+        "body": "average",
+        "clothing": "casual jacket",
+        "appearance": "short hair, determined look"
+      },
+      "voice": {
+        "language": "en",
+        "tone": "confident",
+        "pitch": "medium",
+        "speed": "medium"
+      },
+      "reference_asset": null
+    },
+    {
+      "id": "char_2",
+      "name": "Jordan",
+      "visual": {
+        "age": 26,
+        "gender": "male",
+        "body": "average",
+        "clothing": "casual shirt",
+        "appearance": "short hair, friendly look"
+      },
+      "voice": {
+        "language": "en",
+        "tone": "friendly",
+        "pitch": "medium",
+        "speed": "medium"
+      },
+      "reference_asset": null
+    },
+    {
+      "id": "char_3",
+      "name": "Mia",
+      "visual": {
+        "age": 24,
+        "gender": "female",
+        "body": "average",
+        "clothing": "casual dress",
+        "appearance": "long hair, curious look"
+      },
+      "voice": {
+        "language": "en",
+        "tone": "curious",
+        "pitch": "medium",
+        "speed": "medium"
+      },
+      "reference_asset": null
+    },
+    {
+      "id": "char_4",
+      "name": "Taylor",
+      "visual": {
+        "age": 27,
+        "gender": "female",
+        "body": "average",
+        "clothing": "casual jacket",
+        "appearance": "short hair, calm look"
+      },
+      "voice": {
+        "language": "en",
+        "tone": "calm",
+        "pitch": "medium",
+        "speed": "medium"
+      },
+      "reference_asset": null
+      }
+    }
+  ],
+  "backgrounds": [
+    {
+      "id": "bg_1",
+      "description": "A sunny suburban street",
+      "time_of_day": "day",
+      "reference_asset": null
+    }
+  ],
+  "scenes": [
+    {
+      "id": "scene_01",
+      "duration": 3.5,
+      "background_id": "bg_1",
+      "transition_reason": null,
+      "character_ids": ["char_1", "char_2", "char_3", "char_4"],
+      "shot": {
+        "shot_type": "wide establishing",
+        "movement": "slow_dolly_forward",
+        "angle": "eye_level"
+      },
+      "animation": {
+        "character_motion": "walking",
+        "camera_motion": "slow_dolly_forward",
+        "environment_motion": ["wind in trees"],
+        "effects": []
+      },
+      "action": "4 friends walk down the street.",
+      "visual_prompt": "Cinematic wide shot, 4 friends walking down a sunny street, photorealistic",
+      "dialogue": null,
+      "narration": null,
+      "audio": {
+        "sfx": [
+          {"type": "footsteps", "timestamp": 0.5, "duration": 2.0, "volume": 0.6}
+        ],
+        "music": {
+          "intensity": 0.3,
+          "volume": 0.5
+        }
+      },
+      "transition": {
+        "type": "cut",
+        "duration": 0.0
+      }
+    },
+    {
+      "id": "scene_02",
+      "duration": 2.0,
+      "background_id": "bg_1",
+      "transition_reason": null,
+      "character_ids": ["char_1", "char_2", "char_3", "char_4"],
+      "shot": {
+        "shot_type": "medium close-up",
+        "movement": "static",
+        "angle": "eye_level"
+      },
+      "animation": {
+        "character_motion": "standing",
+        "camera_motion": "static",
+        "environment_motion": [],
+        "effects": []
+      },
+      "action": "4 friends continue walking.",
+      "visual_prompt": "Cinematic medium close-up, 4 friends walking down a sunny street, photorealistic",
+      "dialogue": null,
+      "narration": null,
+      "audio": {
+        "sfx": [
+          {"type": "footsteps", "timestamp": 0.5, "duration": 2.0, "volume": 0.6}
+        ],
+        "music": {
+          "intensity": 0.3,
+          "volume": 0.5
+        }
+      },
+      "transition": {
+        "type": "cut",
+        "duration": 0.0
+      }
+    },
+    {
+      "id": "scene_03",
+      "duration": 2.5,
+      "background_id": "bg_1",
+      "transition_reason": null,
+      "character_ids": ["char_1", "char_2", "char_3", "char_4"],
+      "shot": {
+        "shot_type": "wide establishing",
+        "movement": "slow_dolly_forward",
+        "angle": "eye_level"
+      },
+      "animation": {
+        "character_motion": "walking",
+        "camera_motion": "slow_dolly_forward",
+        "environment_motion": ["wind in trees"],
+        "effects": []
+      },
+      "action": "4 friends continue walking.",
+      "visual_prompt": "Cinematic wide shot, 4 friends walking down a sunny street, photorealistic",
+      "dialogue": null,
+      "narration": null,
+      "audio": {
+        "sfx": [
+          {"type": "footsteps", "timestamp": 0.5, "duration": 2.0, "volume": 0.6}
+        ],
+        "music": {
+          "intensity": 0.3,
+          "volume": 0.5
+        }
+      },
+      "transition": {
+        "type": "cut",
+        "duration": 0.0
+      }
+    },
+    {
+      "id": "scene_04",
+      "duration": 2.0,
+      "background_id": "bg_1",
+      "transition_reason": null,
+      "character_ids": ["char_1", "char_2", "char_3", "char_4"],
+      "shot": {
+        "shot_type": "medium close-up",
+        "movement": "static",
+        "angle": "eye_level"
+      },
+      "animation": {
+        "character_motion": "standing",
+        "camera_motion": "static",
+        "environment_motion": [],
+        "effects": []
+      },
+      "action": "4 friends continue walking.",
+      "visual_prompt": "Cinematic medium close-up, 4 friends walking down a sunny street, photorealistic",
+      "dialogue": null,
+      "narration": null,
+      "audio": {
+        "sfx": [
+          {"type": "footsteps", "timestamp": 0.5, "duration": 2.0, "volume": 0.6}
+        ],
+        "music": {
+          "intensity": 0.3,
+          "volume": 0.5
+        }
+      },
+      "transition": {
+        "type": "cut",
+        "duration": 0.0
+      }
+    },
+    {
+      "id": "scene_05",
+      "duration": 3.0,
+      "background_id": "bg_1",
+      "transition_reason": null,
+      "character_ids": ["char_1", "char_2", "char_3", "char_4"],
+      "shot": {
+        "shot_type": "wide establishing",
+        "movement": "slow_dolly_forward",
+        "angle": "eye_level"
+      },
+      "animation": {
+        "character_motion": "walking",
+        "camera_motion": "slow_dolly_forward",
+        "environment_motion": ["wind in trees"],
+        "effects": []
+      },
+      "action": "4 friends continue walking.",
+      "visual_prompt": "Cinematic wide shot, 4 friends walking down a sunny street, photorealistic",
+      "dialogue": null,
+      "narration": null,
+      "audio": {
+        "sfx": [
+          {"type": "footsteps", "timestamp": 0.5, "duration": 2.0, "volume": 0.6}
+        ],
+        "music": {
+          "intensity": 0.3,
+          "volume": 0.5
+        }
+      },
+      "transition": {
+        "type": "cut",
+        "duration": 0.0
+      }
+    }
+  ]
+}

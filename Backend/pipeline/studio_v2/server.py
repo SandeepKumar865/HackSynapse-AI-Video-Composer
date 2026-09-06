@@ -69,27 +69,45 @@ def run_pipeline_task(job_id: str, prompt: str):
     
     # 2. Run Generator
     try:
+        import time
+        
+        # Clean up old videos so we don't accidentally detect them as completed
+        import glob
+        for old_vid in glob.glob("output/scene_*/video.mp4"):
+            try: os.remove(old_vid)
+            except: pass
+        if os.path.exists("output/master_trailer.mp4"):
+            try: os.remove("output/master_trailer.mp4")
+            except: pass
+            
+        # Launch in a completely new external console window!
         process = subprocess.Popen(
             [sys.executable, "generate_videos.py"],
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT,
-            text=True,
-            bufsize=1
+            creationflags=subprocess.CREATE_NEW_CONSOLE
         )
         
-        for line in iter(process.stdout.readline, ''):
-            if not line:
-                break
+        with open("output/scenes.json") as f:
+            total_scenes = len(json.load(f))
             
+        completed = set()
+        
+        while process.poll() is None:
+            time.sleep(1)
+            
+            # Artificial progress for UI
             if jobs[job_id]["progress"] < 99:
-                jobs[job_id]["progress"] += 0.5
+                jobs[job_id]["progress"] += 0.2
                 
-            msg = line.strip()
-            if msg:
-                jobs[job_id]["logs"].append({"agent": "Generator", "message": msg})
-                if "[SUCCESS]" in msg and "completed" in msg:
-                    jobs[job_id]["completed_scenes"] = jobs[job_id].get("completed_scenes", 0) + 1
-        process.wait()
+            # Check filesystem for newly completed scenes
+            for idx in range(1, total_scenes + 1):
+                if idx not in completed:
+                    video_path = f"output/scene_{idx:02d}/video.mp4"
+                    if os.path.exists(video_path):
+                        # Wait briefly to ensure file isn't still being written
+                        time.sleep(0.5)
+                        completed.add(idx)
+                        jobs[job_id]["completed_scenes"] = jobs[job_id].get("completed_scenes", 0) + 1
+                        jobs[job_id]["logs"].append({"agent": "Generator", "message": f"[SUCCESS] Scene {idx} generated (tracked from disk)"})
         
         if process.returncode != 0:
             jobs[job_id]["status"] = "failed"
@@ -106,9 +124,18 @@ def run_pipeline_task(job_id: str, prompt: str):
     jobs[job_id]["completed_scenes"] = jobs[job_id].get("completed_scenes", 0)
     jobs[job_id]["logs"].append({"agent": "System", "message": "Pipeline finished successfully!"})
 
+is_generating = False
+current_job_id = None
+
 @app.post("/api/generate")
 async def generate_video(req: GenerateRequest, background_tasks: BackgroundTasks):
+    global is_generating, current_job_id
+    if is_generating and current_job_id is not None:
+        return {"job_id": current_job_id}
+        
+    is_generating = True
     job_id = str(uuid.uuid4())
+    current_job_id = job_id
     jobs[job_id] = {
         "status": "starting",
         "progress": 0,
@@ -116,7 +143,16 @@ async def generate_video(req: GenerateRequest, background_tasks: BackgroundTasks
         "completed_scenes": 0,
         "prompt": req.prompt
     }
-    background_tasks.add_task(run_pipeline_task, job_id, req.prompt)
+    
+    def task_wrapper():
+        global is_generating, current_job_id
+        try:
+            run_pipeline_task(job_id, req.prompt)
+        finally:
+            is_generating = False
+            current_job_id = None
+            
+    background_tasks.add_task(task_wrapper)
     return {"job_id": job_id}
 
 @app.get("/api/status/{job_id}")

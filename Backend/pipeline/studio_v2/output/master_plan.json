@@ -1,0 +1,304 @@
+{
+    "project": {
+        "title": "Spider-Man Ascending",
+        "target_duration": 15.0,
+        "style": "cinematic, photorealistic, 4k",
+        "aspect_ratio": "16:9",
+        "audio": {
+            "mood": "exciting",
+            "track": "main_theme_02"
+        }
+    },
+    "characters": [
+        {
+            "id": "char_1",
+            "name": "Spider-Man",
+            "visual": {
+                "age": 25,
+                "gender": "male",
+                "body": "athletic",
+                "clothing": "spider-man suit",
+                "appearance": "dark hair, mask, web-shooters"
+            },
+            "voice": {
+                "language": "en",
+                "tone": "confident",
+                "pitch": "medium",
+                "speed": "medium"
+            },
+            "reference_asset": null
+        }
+    ],
+    "backgrounds": [
+        {
+            "id": "bg_1",
+            "description": "A bustling city skyline at night",
+            "time_of_day": "night",
+            "reference_asset": null
+        },
+        {
+            "id": "bg_2",
+            "description": "A rooftop at night",
+            "time_of_day": "night",
+            "reference_asset": null
+        }
+    ],
+    "scenes": [
+        {
+            "id": "scene_01",
+            "duration": 2.7,
+            "background_id": "bg_1",
+            "transition_reason": null,
+            "character_ids": [
+                "char_1"
+            ],
+            "shot": {
+                "shot_type": "wide establishing",
+                "movement": "static",
+                "angle": "eye_level"
+            },
+            "animation": {
+                "character_motion": "standing",
+                "camera_motion": "static",
+                "environment_motion": [
+                    "street lights flicker"
+                ],
+                "effects": []
+            },
+            "action": "Spider-Man stands on a street corner, ready to begin his nightly patrol.",
+            "visual_prompt": "Cinematic wide shot, Spider-Man standing on a busy city street, photorealistic, night",
+            "dialogue": null,
+            "narration": null,
+            "audio": {
+                "sfx": [
+                    {
+                        "type": "street noise",
+                        "timestamp": 0.0,
+                        "duration": 1.0,
+                        "volume": 0.5
+                    },
+                    {
+                        "type": "wind",
+                        "timestamp": 1.0,
+                        "duration": 1.0,
+                        "volume": 0.3
+                    }
+                ],
+                "music": {
+                    "intensity": 0.2,
+                    "volume": 0.4
+                }
+            },
+            "transition": {
+                "type": "cut",
+                "duration": 0.0
+            }
+        },
+        {
+            "id": "scene_02",
+            "duration": 3.4,
+            "background_id": "bg_1",
+            "transition_reason": null,
+            "character_ids": [
+                "char_1"
+            ],
+            "shot": {
+                "shot_type": "medium close-up",
+                "movement": "static",
+                "angle": "eye_level"
+            },
+            "animation": {
+                "character_motion": "standing",
+                "camera_motion": "static",
+                "environment_motion": [
+                    "street lights flicker"
+                ],
+                "effects": []
+            },
+            "action": "Spider-Man prepares to swing across the city.",
+            "visual_prompt": "Cinematic medium close-up, Spider-Man preparing to swing across the city, photorealistic, night",
+            "dialogue": null,
+            "narration": null,
+            "audio": {
+                "sfx": [
+                    {
+                        "type": "wind",
+                        "timestamp": 0.0,
+                        "duration": 1.0,
+                        "volume": 0.5
+                    },
+                    {
+                        "type": "web-shooters",
+                        "timestamp": 1.0,
+                        "duration": 0.5,
+                        "volume": 0.8
+                    }
+                ],
+                "music": {
+                    "intensity": 0.3,
+                    "volume": 0.5
+                }
+            },
+            "transition": {
+                "type": "cut",
+                "duration": 0.0
+            }
+        },
+        {
+            "id": "scene_03",
+            "duration": 2.7,
+            "background_id": "bg_2",
+            "transition_reason": null,
+            "character_ids": [
+                "char_1"
+            ],
+            "shot": {
+                "shot_type": "medium close-up",
+                "movement": "static",
+                "angle": "eye_level"
+            },
+            "animation": {
+                "character_motion": "standing",
+                "camera_motion": "static",
+                "environment_motion": [
+                    "street lights flicker"
+                ],
+                "effects": []
+            },
+            "action": "Spider-Man lands on a rooftop, ready to take on a new challenge.",
+            "visual_prompt": "Cinematic medium close-up, Spider-Man landing on a rooftop, photorealistic, night",
+            "dialogue": null,
+            "narration": null,
+            "audio": {
+                "sfx": [
+                    {
+                        "type": "wind",
+                        "timestamp": 0.0,
+                        "duration": 1.0,
+                        "volume": 0.5
+                    },
+                    {
+                        "type": "web-shooters",
+                        "timestamp": 1.0,
+                        "duration": 0.5,
+                        "volume": 0.8
+                    }
+                ],
+                "music": {
+                    "intensity": 0.3,
+                    "volume": 0.5
+                }
+            },
+            "transition": {
+                "type": "cut",
+                "duration": 0.0
+            }
+        },
+        {
+            "id": "scene_04",
+            "duration": 3.4,
+            "background_id": "bg_1",
+            "transition_reason": null,
+            "character_ids": [
+                "char_1"
+            ],
+            "shot": {
+                "shot_type": "wide establishing",
+                "movement": "static",
+                "angle": "eye_level"
+            },
+            "animation": {
+                "character_motion": "standing",
+                "camera_motion": "static",
+                "environment_motion": [
+                    "street lights flicker"
+                ],
+                "effects": []
+            },
+            "action": "Spider-Man swings across the city, his web-shooters ready for any obstacle.",
+            "visual_prompt": "Cinematic wide shot, Spider-Man swinging across the city, photorealistic, night",
+            "dialogue": null,
+            "narration": null,
+            "audio": {
+                "sfx": [
+                    {
+                        "type": "wind",
+                        "timestamp": 0.0,
+                        "duration": 1.0,
+                        "volume": 0.5
+                    },
+                    {
+                        "type": "web-shooters",
+                        "timestamp": 1.0,
+                        "duration": 0.5,
+                        "volume": 0.8
+                    },
+                    {
+                        "type": "street noise",
+                        "timestamp": 2.0,
+                        "duration": 0.5,
+                        "volume": 0.5
+                    }
+                ],
+                "music": {
+                    "intensity": 0.3,
+                    "volume": 0.5
+                }
+            },
+            "transition": {
+                "type": "cut",
+                "duration": 0.0
+            }
+        },
+        {
+            "id": "scene_05",
+            "duration": 2.8,
+            "background_id": "bg_2",
+            "transition_reason": null,
+            "character_ids": [
+                "char_1"
+            ],
+            "shot": {
+                "shot_type": "medium close-up",
+                "movement": "static",
+                "angle": "eye_level"
+            },
+            "animation": {
+                "character_motion": "standing",
+                "camera_motion": "static",
+                "environment_motion": [
+                    "street lights flicker"
+                ],
+                "effects": []
+            },
+            "action": "Spider-Man lands on a rooftop, ready to take on a new challenge.",
+            "visual_prompt": "Cinematic medium close-up, Spider-Man landing on a rooftop, photorealistic, night",
+            "dialogue": null,
+            "narration": null,
+            "audio": {
+                "sfx": [
+                    {
+                        "type": "wind",
+                        "timestamp": 0.0,
+                        "duration": 1.0,
+                        "volume": 0.5
+                    },
+                    {
+                        "type": "web-shooters",
+                        "timestamp": 1.0,
+                        "duration": 0.5,
+                        "volume": 0.8
+                    }
+                ],
+                "music": {
+                    "intensity": 0.3,
+                    "volume": 0.5
+                }
+            },
+            "transition": {
+                "type": "cut",
+                "duration": 0.0
+            }
+        }
+    ]
+}
